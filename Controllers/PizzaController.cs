@@ -29,13 +29,14 @@ namespace ContosoPizza.Controllers
             return pizza;
         }
 
-        // [HttpPost]
-        // public IActionResult Create(Pizza pizza)
-        // {
-        //     // This code will save the pizza and return a result
-        //     PizzaService.Add(pizza);
-        //     return CreatedAtAction(nameof(Create), new { id = pizza.Id }, pizza);
-        // }
+        [HttpPost]
+        public IActionResult Create(Pizza pizza)
+        {
+            // This code will save the pizza and return a result
+            PizzaService.Add(pizza);
+            return CreatedAtAction(nameof(Create), new { id = pizza.Id }, pizza);
+        }
+
         [HttpPost("/new")]
         public IActionResult Create2(Pizza pizza)
         {
